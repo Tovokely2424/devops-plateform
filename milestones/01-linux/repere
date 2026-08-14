@@ -1,0 +1,47 @@
+File navigation: ls, cd, pwd, tree
+File operations: cp, mv, rm, touch, cat, less, more, head, tail
+File search: find, locate, which, whereis, grep, egrep, fgrep
+Text processing: wc, sort, uniq, cut, tr, diff, cmp, file
+User management: useradd, usermod, userdel, passwd, id, whoami, su, sudo
+Group management: groupadd, groupmod, groupdel, gpasswd
+Permission management: chmod, chown, chgrp, umask, SUID, SGID, sticky bit
+Process control: ps, top, htop, pgrep, kill, pkill, killall, jobs, bg, fg, nice, renice
+Service management: systemctl (start, stop, restart, enable, disable, status)
+System logs: journalctl, /var/log/syslog, /var/log/messages, /var/log/auth.log
+Network commands: ip a, ip route, ping, traceroute, netstat, ss, nslookup, dig, curl, wget
+Network files: /etc/network/interfaces, /etc/hosts, /etc/resolv.conf, /etc/hostname
+Storage management: df, du, mount, umount, lsblk, blkid, fdisk, parted, mkfs, fsck
+Compression/archiving: tar, gzip, gunzip, bzip2, zip, unzip
+Resource monitoring: uptime, free, vmstat, iostat, sar, lsof, dmesg
+Scheduling: cron, crontab -e, at, systemd timers
+
+Bash basics: variables, arguments, loops, conditions, functions
+Input/output redirection: >, >>, 2>, |, tee
+Error handling and exit codes: set -e, trap, logger, $?
+Text processing: awk, sed, grep, cut, paste, join, sort, uniq
+Automating repetitive tasks : (backup, cleanup, monitoring scripts)
+Cron job creation for automated tasks :
+Creating reusable bash scripts with parameters and logging :
+
+Git commands: init, clone, add, commit, push, pull, branch, merge, rebase, log, diff, stash, remote, tag
+Git concepts: .gitignore, feature branches, merge requests, pull requests
+Docker usage: run, ps, stop, rm, images, rmi, build, exec, logs
+Docker concepts: containers, images, volumes, networks, Dockerfile
+Docker Compose basics: docker-compose up, down, build
+Ansible: inventory, playbook YAML, tasks, roles, ansible-playbook command
+Terraform: provider, resource, variable, output, terraform init/plan/apply
+CI/CD basics: Jenkins pipelines, GitHub Actions, runners, triggers
+AWS services: EC2, S3, IAM, VPC, RDS, CloudWatch, CLI (configure, s3 ls, ec2 describe-instances)
+
+System updates: apt, dnf, yum package management
+SSH hardening: /etc/ssh/sshd_config, disable root login, custom port, key authentication
+Firewall management: ufw, firewalld, iptables
+Connection monitoring: last, lastlog, who, w
+Security auditing tools: fail2ban, auditd
+Backup & restore: rsync, scp, tar, dd, cron jobs
+Database backup: mysqldump, pg_dump
+System hardening: permissions, updates, logging, limited sudo usage
+
+Set up an Nginx web server on Ubuntu/Debian : 
+Create and manage a custom systemd service : 
+Automate daily backup with a Bash script and cron : 
