@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hasher-deployment
+  name: hasher-deployment
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: hasher
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: hasher
+    spec:
+      containers:
+      - image: localhost:32000/hasher:v1
+        name: hasher
+        ports:
+        - containerPort: 80
+          name: http

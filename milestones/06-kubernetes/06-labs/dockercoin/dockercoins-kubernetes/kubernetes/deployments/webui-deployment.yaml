@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webui-deployment
+  name: webui-deployment
+spec:
+  replicas: 12 
+  selector:
+    matchLabels:
+      app: webui
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: webui
+    spec:
+      containers:
+      - image: localhost:32000/webui:v1
+        name: webui
+        ports:
+        - containerPort: 80
+          name: http
