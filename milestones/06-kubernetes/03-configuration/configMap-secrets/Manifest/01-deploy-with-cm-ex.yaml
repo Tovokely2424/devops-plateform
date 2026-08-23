@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 5 
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        envFrom:
+        - configMapRef:
+            name: nginx-env-config
+        volumeMounts:
+          - name: nginx-config-volume
+            mountPath: /etc/nginx/templates/nginx.conf.template
+            subPath: nginx.conf.template
+        command: ["/bin/sh"]
+        env:
+          - name: INDEX_CONTENT
+            valueFrom:
+              configMapKeyRef:
+                name: nginx-content
+                key: index_content
+        args:
+          - "-c"
+          - |
+            envsubst < /etc/nginx/templates/nginx.conf.template > /etc/nginx/nginx.conf && \
+            echo "${INDEX_CONTENT}" > "${ROOT_LOCATION}"/index.html && \
+            exec nginx -g 'daemon off;'
+        ports:
+          - containerPort: 80
+    
+      volumes:
+        - name: nginx-config-volume
+          configMap:
+            name: nginx-template-config
+            items:
+              - key: nginx.conf.template
+                path: nginx.conf.template
