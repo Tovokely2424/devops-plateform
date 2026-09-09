@@ -88,7 +88,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo \
     libwebp7 \
     libfreetype6 \
-    libzip4 \
+    libzip5 \
     && rm -rf /var/lib/apt/lists/*
 
 # PHP extensions nécessaires au runtime

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: vengineers-backend
+  name: vengineers-backend-svc
+spec:
+  ports:
+  - name: "laravel"
+    port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: vengineers-backend
+  type: ClusterIP
+status:
+  loadBalancer: {}
