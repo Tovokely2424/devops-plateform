@@ -29,6 +29,7 @@ spec:
         - containerPort: 5173
 
       volumes: 
+      - name: vengineers-frontend-volume
         configMap:
           name: vengineers-frontend-config
           path: vengineers-frontend-config

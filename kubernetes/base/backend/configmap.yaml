@@ -39,4 +39,4 @@ data:
   VITE_APP_NAME: "${APP_NAME}"
 
 metadata:
-  name: cm-back
+  name: vengineers-backend-config
