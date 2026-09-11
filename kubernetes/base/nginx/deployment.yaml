@@ -2,34 +2,33 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: vengineers-frontend
-  name: vengineers-frontend
+    app: nginx
+  name: nginx
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vengineers-frontend
-  strategy:
-    type: RollingUpdate
-    maxSurge: 1
-    maxUnavailable: 1
+      app: nginx
+  strategy: {}
   template:
     metadata:
       labels:
-        app: vengineers-frontend
+        app: nginx
     spec:
       containers:
-      - image: prasolonjatovo/vengineers-frontend:dev
-        name: vengineers-frontend
+      - image: nginx
+        name: nginx
         volumeMounts:
-        - name: vengineers-frontend-volume
-          mountPath: /app/config
-
+        - name: nginx-volume
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
         ports:
-        - containerPort: 5173
+        - containerPort: 80 
 
-      volumes: 
-      - name: vengineers-frontend-volume
+      volumes:
+      - name: nginx-volume
         configMap:
-          name: vengineers-frontend-config
-          path: vengineers-frontend-config
+          name: nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf

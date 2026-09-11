@@ -1,19 +1,17 @@
-apiversion: v1
+apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: vengineers-frontend
-
-  name: vengineers-frontend-svc
+    app: nginx
+  name: nginx-svc
 spec:
   ports:
-  - name: "vite"
-    port: 5173
+  - name: "http"
+    port: 80
     protocol: TCP
-    targetPort: 5173
+    targetPort: 80
   selector:
-    app: vengineers-frontend
+    app: nginx
   type: ClusterIP
 status:
-  loadBalancer: {}
-
+  loadBalancer: {}  
