@@ -21,9 +21,9 @@ spec:
       containers:
       - image: prasolonjatovo/vengineers-backend:dev
         name: vengineers-backend
-        volumeMounts:
-        - name: vengineers-backend-volume
-          mountPath: /app/config
+        envFrom:
+        - configMapRef:
+            name: vengineers-backend-config
         ports:
         - containerPort: 9000
       
