@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: app/v1
+metadata:
+  name: vengineers-frontend-config
+data:
+  APP_NAME: Vengineers
+  APP_ENV: local
+  APP_DEBUG: true
+  APP_URL: "http://localhost:5173"
+
+  APP_LOCALE: en
+  APP_FALLBACK_LOCALE: en
+  APP_FAKER_LOCALE: en_US
+
+  LOG_CHANEL: stack
+  LOG_STACK: single
+  LOG_DEPRECATIONS_CHANNEL: null
+  LOG_LEVEL: debug
+
+  SESSION_DRIVER: database
+  SESSION_LIFETIME: 120
+  SESSION_ENCRYPT: false
+  SESSION_PATH: '/'
+  SESSION_DOMAIN: localhost
+
+  SANCTUM_STATEFUL_DOMAINS: 'localhost:5173'
+  FRONTEND_URL: 'http://localhost:5173'

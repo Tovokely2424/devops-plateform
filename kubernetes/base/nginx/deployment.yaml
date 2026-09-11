@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: vengineers-frontend
+  name: vengineers-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vengineers-frontend
+  strategy:
+    type: RollingUpdate
+    maxSurge: 1
+    maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: vengineers-frontend
+    spec:
+      containers:
+      - image: prasolonjatovo/vengineers-frontend:dev
+        name: vengineers-frontend
+        volumeMounts:
+        - name: vengineers-frontend-volume
+          mountPath: /app/config
+
+        ports:
+        - containerPort: 5173
+
+      volumes: 
+        configMap:
+          name: vengineers-frontend-config
+          path: vengineers-frontend-config
