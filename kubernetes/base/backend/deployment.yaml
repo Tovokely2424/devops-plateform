@@ -5,14 +5,10 @@ metadata:
     app: vengineers-backend
   name: vengineers-backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: vengineers-backend
-  strategy:
-    type: RollingUpdate
-    maxSurge: 1
-    maxUnavailable: 1
   template:
     metadata:
       labels:

@@ -4,13 +4,10 @@ metadata:
   name: vengineers-backend-config
 data:
   APP_NAME: Vengineers
-  APP_ENV: local
-  APP_DEBUG: true
-  APP_URL: "http://localhost:8000"
 
   APP_LOCALE: en
   APP_FALLBACK_LOCALE: en
-  APP_FAKER_LOCALE: en_US
+  
 
   APP_MAINTENANCE_DRIVER: file
   BCRYPT_ROUNDS: 12
@@ -18,16 +15,12 @@ data:
   LOG_CHANEL: stack
   LOG_STACK: single
   LOG_DEPRECATIONS_CHANNEL: null
-  LOG_LEVEL: debug
 
   SESSION_DRIVER: database
   SESSION_LIFETIME: 120
   SESSION_ENCRYPT: false
   SESSION_PATH: '/'
   SESSION_DOMAIN: localhost
-
-  SANCTUM_STATEFUL_DOMAINS: 'localhost:5173'
-  FRONTEND_URL: 'http://localhost:5173'
 
   BROADCAST_CONNECTION: log
   FILESYSTEM_DISK: local
@@ -37,7 +30,5 @@ data:
   MAIL_MAILER: log
   MAIL_FROM_ADDRESS: 'contact@vengineers.net'
   MAIL_FROM_NAME: 'Vengineers'
-
-  VITE_APP_NAME: "${APP_NAME}"
 
 

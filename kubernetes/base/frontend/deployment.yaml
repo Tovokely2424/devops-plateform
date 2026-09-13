@@ -9,10 +9,6 @@ spec:
   selector:
     matchLabels:
       app: vengineers-frontend
-  strategy:
-    type: RollingUpdate
-    maxSurge: 1
-    maxUnavailable: 1
   template:
     metadata:
       labels:
@@ -21,9 +17,9 @@ spec:
       containers:
       - image: prasolonjatovo/vengineers-frontend:dev
         name: vengineers-frontend
-        volumeMounts:
-        - name: vengineers-frontend-volume
-          mountPath: /app/config
+        envFrom:
+        - configMapRef:
+            name: vengineers-frontend-config
 
         ports:
         - containerPort: 5173
