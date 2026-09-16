@@ -28,4 +28,3 @@ spec:
       - name: vengineers-frontend-volume
         configMap:
           name: vengineers-frontend-config
-          path: vengineers-frontend-config

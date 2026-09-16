@@ -8,20 +8,21 @@ data:
   APP_LOCALE: en
   APP_FALLBACK_LOCALE: en
   
-
+  DB_CONNECTION: mysql
+  DB_DATABASE: vengineers
+  DB_USERNAME: root
   APP_MAINTENANCE_DRIVER: file
-  BCRYPT_ROUNDS: 12
+  BCRYPT_ROUNDS: "12"
 
   LOG_CHANEL: stack
   LOG_STACK: single
-  LOG_DEPRECATIONS_CHANNEL: null
-
+  LOG_DEPRECATIONS_CHANNEL: "null"
+  DB_HOST: "mysql-svc"
   SESSION_DRIVER: database
-  SESSION_LIFETIME: 120
-  SESSION_ENCRYPT: false
+  SESSION_LIFETIME: "140"
+  SESSION_ENCRYPT: "false"
   SESSION_PATH: '/'
   SESSION_DOMAIN: localhost
-
   BROADCAST_CONNECTION: log
   FILESYSTEM_DISK: local
   QUEUE_CONNECTION: database
@@ -30,5 +31,4 @@ data:
   MAIL_MAILER: log
   MAIL_FROM_ADDRESS: 'contact@vengineers.net'
   MAIL_FROM_NAME: 'Vengineers'
-
 

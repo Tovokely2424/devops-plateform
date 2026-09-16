@@ -3,17 +3,13 @@ kind: Service
 metadata:
   labels:
     app: vengineers-frontend
-
-  name: vengineers-frontend-svc
+  name: frontend-svc
 spec:
   ports:
-  - name: "vite"
+  - name: "5173"
     port: 5173
     protocol: TCP
     targetPort: 5173
   selector:
     app: vengineers-frontend
-  type: ClusterIP
-status:
-  loadBalancer: {}
-
+  type: NodePort

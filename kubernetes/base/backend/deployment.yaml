@@ -20,11 +20,7 @@ spec:
         envFrom:
         - configMapRef:
             name: vengineers-backend-config
+        - secretRef:
+            name: vengineers-backend-secret
         ports:
         - containerPort: 9000
-      
-      volumes:
-      - name: vengineers-backend-volume
-        configMap:
-          name: vengineers-backend-config
-          path: vengineers-backend-config

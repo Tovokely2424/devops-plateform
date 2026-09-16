@@ -1,11 +1,11 @@
 apiVersion: v1
-kind: configMap
+kind: ConfigMap
 metadata:
   name: vengineers-frontend-config
 data:
   APP_NAME: Vengineers
   APP_ENV: local
-  APP_DEBUG: true
+  APP_DEBUG: "true"
   APP_URL: "http://localhost:5173"
 
   APP_LOCALE: en
@@ -14,12 +14,12 @@ data:
 
   LOG_CHANEL: stack
   LOG_STACK: single
-  LOG_DEPRECATIONS_CHANNEL: null
+  LOG_DEPRECATIONS_CHANNEL: "null"
   LOG_LEVEL: debug
 
   SESSION_DRIVER: database
-  SESSION_LIFETIME: 120
-  SESSION_ENCRYPT: false
+  SESSION_LIFETIME: "120"
+  SESSION_ENCRYPT: "false"
   SESSION_PATH: '/'
   SESSION_DOMAIN: localhost
 
