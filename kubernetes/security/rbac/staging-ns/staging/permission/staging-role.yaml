@@ -1,0 +1,77 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: staging-role
+  namespace: staging-ns
+
+rules:
+
+# Pods
+- apiGroups: [""]
+  resources:
+    - pods
+  verbs:
+    - get
+    - list
+    - watch
+
+# Pod logs
+- apiGroups: [""]
+  resources:
+    - pods/log
+  verbs:
+    - get
+
+# Services
+- apiGroups: [""]
+  resources:
+    - services
+  verbs:
+    - get
+    - list
+    - watch
+
+# ConfigMaps
+- apiGroups: [""]
+  resources:
+    - configmaps
+  verbs:
+    - get
+    - list
+    - watch
+
+# Events
+- apiGroups: [""]
+  resources:
+    - events
+  verbs:
+    - get
+    - list
+    - watch
+
+# Deployments
+- apiGroups: ["apps"]
+  resources:
+    - deployments
+  verbs:
+    - get
+    - list
+    - watch
+
+# ReplicaSets
+- apiGroups: ["apps"]
+  resources:
+    - replicasets
+  verbs:
+    - get
+    - list
+    - watch
+
+# Ingress
+- apiGroups: ["networking.k8s.io"]
+  resources:
+    - ingresses
+  verbs:
+    - get
+    - list
+    - watch
