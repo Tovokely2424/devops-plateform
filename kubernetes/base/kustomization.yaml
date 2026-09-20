@@ -6,7 +6,6 @@ resources:
   - bdd/secret.yaml
   - bdd/deployment.yaml
   - bdd/service.yaml
-  - bdd/pvc.yaml
   - backend/configmap.yaml
   - backend/secret.yaml
   - backend/deployment.yaml
