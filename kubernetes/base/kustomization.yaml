@@ -6,7 +6,6 @@ resources:
   - bdd/secret.yaml
   - storage/pv-volume.yaml
   - storage/pvc-volume.yaml
-  - storage/pvc.yaml
   - bdd/mysql/deployment.yaml
   - bdd/postgres/deployment.yaml
   - bdd/postgres/service.yaml
