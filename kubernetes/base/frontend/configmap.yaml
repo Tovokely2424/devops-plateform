@@ -25,3 +25,4 @@ data:
 
   SANCTUM_STATEFUL_DOMAINS: 'localhost:5173'
   FRONTEND_URL: 'http://localhost:5173'
+  VITE_API_URL: 'http://192.168.165.128:30080/api'
