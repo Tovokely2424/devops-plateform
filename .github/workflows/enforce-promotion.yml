@@ -1,0 +1,25 @@
+name: Enforce promotion chain
+
+on:
+  pull_request:
+    branches: [development, staging, main]
+
+jobs:
+  check-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify source branch
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          ok=0
+          case "$BASE" in
+            main)        if [ "$HEAD" = "staging" ]; then ok=1; fi ;;
+            staging)     if [ "$HEAD" = "development" ]; then ok=1; fi ;;
+            development) case "$HEAD" in feature/*|features) ok=1 ;; esac ;;
+          esac
+          if [ "$ok" != "1" ]; then
+            echo "::error::PR $HEAD -> $BASE interdite par la chaîne de promotion"
+            exit 1
+          fi
