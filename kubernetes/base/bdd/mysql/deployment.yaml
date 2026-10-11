@@ -19,9 +19,9 @@ spec:
         name: mysql
         envFrom:
         - configMapRef:
-            name: mysql-config
+            name: bdd-config
         - secretRef:
-            name: mysql-secret
+            name: bdd-secret
         volumeMounts:
         - name: mysql-storage
           mountPath: /var/lib/mysql

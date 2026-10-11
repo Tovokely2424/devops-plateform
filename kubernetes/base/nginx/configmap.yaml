@@ -6,17 +6,19 @@ data:
   nginx.conf: |
     server {
       listen 80;
-      index index.php index.html;
-      root /var/www/html/public;
 
-      location / {
-          try_files $uri $uri/ /index.php?$query_string;
+      location /api/ {
+          include fastcgi_params;
+          fastcgi_pass vengineers-backend-svc:9000;
+          fastcgi_param SCRIPT_FILENAME /var/www/html/public/index.php;
+          fastcgi_param SCRIPT_NAME /index.php;
       }
 
-      location ~ \.php$ {
-          fastcgi_pass vengineers-backend-svc:9000;
-          fastcgi_index index.php;
-          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-          include fastcgi_params;
+      location / {
+          proxy_pass http://frontend-svc:5173;
+          proxy_http_version 1.1;
+          proxy_set_header Host $host;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
       }
     }
