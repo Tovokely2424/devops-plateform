@@ -1,0 +1,1 @@
+The replicas definition was with error , template pods don't match with the selecto lables under the replcas definition file
