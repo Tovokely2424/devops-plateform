@@ -52,8 +52,9 @@ kubectl rollout status deploy/deploy-name
 kubetcl rollout undo deploy/deploy-name
 kubetcl rollout history deploy deploy-name
 ```
-29/10/2026
 # Configure aplications with kubernetes 
 - [x] Commands and arguments in Docker
-- [x] 
+```
+Conflict with dev resolved
+```
 
