@@ -1,4 +1,3 @@
-
 # 11/10/2026 - Began CKAD content on KodeKloud
 
 
@@ -35,4 +34,25 @@
 # Admission controller
 - [x] Validation and Mutating admission controller
 - [x] Admission webhook server with labs
+
+29/10/2026
+- [x] Monitoring solution for Cluster
+- [x] Metrics server deployment
+```
+kubectl top node
+kubectl top pod
+minikube addons enable metrics-server
+
+```
+- [x] Application lifecycle management
+
+```
+kubectl rollout status deploy/deploy-name
+kubetcl rollout undo deploy/deploy-name
+kubetcl rollout history deploy deploy-name
+```
+29/10/2026
+# Configure aplications with kubernetes 
+- [x] Commands and arguments in Docker
+- [x] 
 
