@@ -58,3 +58,41 @@ kubetcl rollout history deploy deploy-name
 Conflict with dev resolved
 ```
 
+01/11/2026
+# ConfigMap
+```
+env: 
+    - name: APP_COLOR
+      valueFrom:
+        configMapKeyRef:
+            name: app-config
+            key: APP_COLOR
+envFrom:
+    - configMapRef:
+        name: app-config
+volumes:
+    - name: app-config-volume
+      configMap:
+        name: app-config
+
+```
+
+# Secrets
+
+```
+env:
+    - name: DB-SECRET
+      valueFrom:
+        secretKeyRef:
+            name: app-secret
+            key: DB-PASSWORD
+envFrom:
+    - secretRef:
+        name: app-secret
+
+volumes:
+    - name: app-secret-volume
+      secret:
+        name: app-secret
+
+```
