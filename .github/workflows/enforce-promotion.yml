@@ -17,7 +17,7 @@ jobs:
           case "$BASE" in
             main)        if [ "$HEAD" = "staging" ]; then ok=1; fi ;;
             staging)     if [ "$HEAD" = "development" ]; then ok=1; fi ;;
-            development) case "$HEAD" in feature/*|features) ok=1 ;; esac ;;
+            development) case "$HEAD" in feature/*|features/*) ok=1 ;; esac ;;
           esac
           if [ "$ok" != "1" ]; then
             echo "::error::PR $HEAD -> $BASE interdite par la chaîne de promotion"
