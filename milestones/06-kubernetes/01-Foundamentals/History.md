@@ -52,8 +52,47 @@ kubectl rollout status deploy/deploy-name
 kubetcl rollout undo deploy/deploy-name
 kubetcl rollout history deploy deploy-name
 ```
-29/10/2026
 # Configure aplications with kubernetes 
 - [x] Commands and arguments in Docker
-- [x] 
+```
+Conflict with dev resolved
+```
 
+01/11/2026
+# ConfigMap
+```
+env: 
+    - name: APP_COLOR
+      valueFrom:
+        configMapKeyRef:
+            name: app-config
+            key: APP_COLOR
+envFrom:
+    - configMapRef:
+        name: app-config
+volumes:
+    - name: app-config-volume
+      configMap:
+        name: app-config
+
+```
+
+# Secrets
+
+```
+env:
+    - name: DB-SECRET
+      valueFrom:
+        secretKeyRef:
+            name: app-secret
+            key: DB-PASSWORD
+envFrom:
+    - secretRef:
+        name: app-secret
+
+volumes:
+    - name: app-secret-volume
+      secret:
+        name: app-secret
+
+```
