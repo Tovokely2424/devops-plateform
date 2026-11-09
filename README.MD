@@ -63,6 +63,7 @@ Monitoring & Observability
   │
   ▼
 GitOps
+
   │
   ▼
 Production-Oriented DevOps Platform
@@ -825,14 +826,14 @@ The platform evolves milestone by milestone instead of attempting to build every
 
 | Milestone               | Status         |
 | ----------------------- | -------------- |
-| Foundations             | 🟡 In Progress |
+| Foundations             | 🟢 Practiced  |
 | Linux                   | 🟢 Practiced   |
 | Git                     | 🟢 Practiced   |
 | Docker                  | 🟢 Practiced   |
-| AWS CLI                 | 🟡 In Progress |
-| AWS Networking          | 🟡 In Progress |
+| AWS CLI                 | 🟢 Practiced |
+| AWS Networking          | 🟢 Practiced |
 | Kubernetes Fundamentals | 🟢 Active      |
-| Kubernetes Production   | 🔵 Planned     |
+| Kubernetes Production   | 🟡 In Progress     |
 | Terraform               | 🔵 Planned     |
 | CI/CD                   | 🔵 Planned     |
 | Security                | 🔵 Planned     |
@@ -888,9 +889,9 @@ This repository is intended to demonstrate practical experience and continuous d
 * AWS services
 * Docker and containerization
 * multi-container applications
-* Kubernetes
+* Kubernetes Administration et practices
 * Kubernetes networking
-* Kubernetes RBAC
+* Kubernetes RBAC, Admission Controller
 * declarative infrastructure
 * troubleshooting distributed systems
 * Infrastructure as Code
