@@ -118,3 +118,4 @@ volumes:
 - Deployment of the network module such as flanel, calico ... to finalise the coredns deployment and make the cluster ready
 ```
 
+```
